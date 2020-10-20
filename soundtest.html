@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="/static/static.css">
+
+<html>
+    <script src="/static/wa2.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+    var s_start = "/static/audio/sample/sample_start.mp3"
+    var s_normal = "/static/audio/sample/sample_normal.mp3"
+    var s_sokuho = "/static/audio/sample/sample_sokuho.mp3"
+    var s_atsumori = "/static/audio/sample/sample_atsumori.mp3"
+    var s_corner = "/static/audio/sample/sample_corner.mp3"
+    var s_end = "static/audio/sample/sample_end.mp3"
+
+    var st_img = document.getElementById('st_img');
+    var n_img = document.getElementById('n_img');
+    var s_img = document.getElementById('s_img');
+    var a_img = document.getElementById('a_img');
+    var c_img = document.getElementById('c_img');
+    var e_img = document.getElementById('e_img');
+
+
+
+      wa2.loadFile(s_start, function(buffer) {
+        // ユーザーイベント
+        st_img.onclick = function() {
+          wa2.play("sample_start.mp3");
+        };
+      });
+
+      wa2.loadFile(s_normal, function(buffer) {
+        // ユーザーイベント
+        n_img.onclick = function() {
+          wa2.play("sample_normal.mp3");
+          n_img.src = "/static/T2_1_OL_kurai.png"
+          setTimeout('n_img.src = "/static/T2_1_OL.png"', 2700);
+        };
+      });
+      wa2.loadFile(s_sokuho, function(buffer) {
+        // ユーザーイベント
+        s_img.onclick = function() {
+          wa2.play("sample_sokuho.mp3");
+          s_img.src = "/static/T2_sokuho_1_OL_kurai.png"
+          setTimeout('s_img.src = "/static/T2_sokuho_1_OL.png"', 2300);
+        };
+      });
+      wa2.loadFile(s_atsumori, function(buffer) {
+        // ユーザーイベント
+        a_img.onclick = function() {
+          wa2.play("sample_atsumori.mp3");
+          a_img.src = "/static/T3_kurai.png"
+          setTimeout('a_img.src = "/static/T3.png"', 2800);
+        };
+      });
+      wa2.loadFile(s_corner, function(buffer) {
+        // ユーザーイベント
+        c_img.onclick = function() {
+          wa2.play("sample_corner.mp3");
+          c_img.src = "/static/T4_kasane_kurai.png"
+          setTimeout('c_img.src = "/static/T4_kasane.png"', 2800);
+        };
+      });
+      wa2.loadFile(s_end, function(buffer) {
+        // ユーザーイベント
+        e_img.onclick = function() {
+          wa2.play("sample_end.mp3");
+          e_img.src = "/static/color_kurai.png"
+          setTimeout('e_img.src = "/static/color.png"', 2000);
+        };
+      });
+    }
+</script>
+
+
+<head>
+<meta charset="UTF-8" />
+<title>내 귀에 도청장치</title>
+</head>
+<body>
+
+<div class="adjust-box box-1x1">
+    <div class="inner">
+<div class="left">
+    <a id="link" href="/"></a>
+</div>
+        <p id="padding"></p>
+        <img src="/static/T2_1_OL.png" class="img" id="n_img">
+        <p class="padding"></p>
+        <img src="/static/T2_sokuho_1_OL.png" class="img" id="s_img">
+        <p class="padding"></p>
+        <img src="/static/T3.png" class="img" id="a_img">
+        <img src="/static/tv_gr2.png" class="img2" id="st_img">
+        <p class="padding"></p>
+        <img src="/static/T4_kasane.png" class="img" id="c_img">
+        <p class="padding"></p>
+        <img src="/static/color.png"  id="e_img">
+        <p class="padding"></p>
+
+    </div>
+</div>
+</body>
+</html>
